@@ -101,8 +101,9 @@ GameObject:
   - component: {fileID: 56551960}
   - component: {fileID: 56551959}
   - component: {fileID: 56551958}
+  - component: {fileID: 56551961}
   m_Layer: 0
-  m_Name: Jugador
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,12 +172,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 56551957}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.05, y: 0.71, z: 0}
+  m_LocalPosition: {x: 8, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &56551961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56551957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1a93aeaca154141912883e194fb8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidthInUnits: 16
 --- !u!1 &180616650
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +202,7 @@ GameObject:
   - component: {fileID: 180616652}
   - component: {fileID: 180616651}
   m_Layer: 0
-  m_Name: Pelota
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
