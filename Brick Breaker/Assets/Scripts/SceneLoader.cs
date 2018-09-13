@@ -15,6 +15,11 @@ public class SceneLoader : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void LoadGameOver()
     {
         SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);       

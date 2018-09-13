@@ -41,4 +41,9 @@ public class Ball : MonoBehaviour {
             hasStarted = true;
         }
     }
+
+    public bool isMoving()
+    {
+        return hasStarted;
+    }
 }
