@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class Block : MonoBehaviour {
 
-    Level level; 
+    //config parameters
+    [SerializeField] int maxHits;
+    [SerializeField] Sprite[] hitSprites;
+    
+    //cached parameters
+    Level level;
+
+    //state parameters
+    int timesHit;
 
     private void Start()
     {
@@ -13,6 +21,20 @@ public class Block : MonoBehaviour {
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
+    {
+        timesHit++;
+        if (timesHit >= maxHits)
+            DestroyBlock();
+        else
+            Break();
+    }
+
+    void Break()
+    {
+        GetComponent<SpriteRenderer>().sprite = hitSprites[timesHit - 1];
+    } 
+
+    private void DestroyBlock()
     {
         Destroy(gameObject); //funciona como un Destroy(this)
         level.DiscountOneBlock();
