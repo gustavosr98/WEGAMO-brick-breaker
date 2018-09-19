@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,12 +17,17 @@ public class Ball : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        hasStarted = false;
-        DistanciaEntreBarraPelota = transform.position - player.transform.position;
+        StickToPlayer();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    public void StickToPlayer()
+    {
+        hasStarted = false;
+        DistanciaEntreBarraPelota = new Vector2(0, 0.75f);
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (!hasStarted) {
             LockBallToPlayer();
             LaunchOnMouseClick();
